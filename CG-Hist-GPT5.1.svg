@@ -1,0 +1,370 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="900" viewBox="0 0 2800 900">
+  <style>
+    .axis { stroke: #000; stroke-width: 2; }
+    .axis-year { stroke: #888; stroke-width: 1; stroke-dasharray: 4 4; }
+    .label { font-family: Arial, sans-serif; font-size: 14px; fill: #000; }
+    .label-small { font-family: Arial, sans-serif; font-size: 12px; fill: #000; }
+    .section-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #000; }
+    .event-games rect { fill: #e6f2ff; stroke: #2f6fb2; stroke-width: 1; rx: 4; ry: 4; }
+    .event-engines rect { fill: #e8ffe6; stroke: #2b8c2b; stroke-width: 1; rx: 4; ry: 4; }
+    .event-platforms rect { fill: #fff4e6; stroke: #b26b2f; stroke-width: 1; rx: 4; ry: 4; }
+    .year-text { font-family: Arial, sans-serif; font-size: 12px; fill: #555; text-anchor: middle; }
+
+    .event-group { cursor: pointer; transition: transform 0.15s; }
+    .event-group:hover { }
+
+    .tooltip-bg { fill: #ffffcc; stroke: #666; stroke-width: 1; rx: 4; ry: 4; }
+    .tooltip-text { font-family: Arial, sans-serif; font-size: 12px; fill: #000; }
+  </style>
+
+  <script type="application/ecmascript"><![CDATA[
+    function showTooltip(evt, text) {
+      var svg = evt.target.ownerSVGElement;
+      var tooltip = svg.getElementById('tooltip');
+      var tooltipText = svg.getElementById('tooltip-text');
+      var tooltipBg = svg.getElementById('tooltip-bg');
+
+      // Текст
+      while (tooltipText.firstChild) {
+        tooltipText.removeChild(tooltipText.firstChild);
+      }
+
+      var lines = text.split('\n');
+      for (var i = 0; i < lines.length; i++) {
+        var tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+        tspan.setAttribute('x', '0');
+        tspan.setAttribute('dy', i === 0 ? '0' : '1.2em');
+        tspan.textContent = lines[i];
+        tooltipText.appendChild(tspan);
+      }
+
+      // Позиция (рядом с курсором)
+      var pt = svg.createSVGPoint();
+      pt.x = evt.clientX;
+      pt.y = evt.clientY;
+      var ctm = svg.getScreenCTM().inverse();
+      var loc = pt.matrixTransform(ctm);
+
+      var padding = 6;
+      var bbox = tooltipText.getBBox();
+      tooltipBg.setAttribute('x', bbox.x - padding);
+      tooltipBg.setAttribute('y', bbox.y - padding);
+      tooltipBg.setAttribute('width', bbox.width + 2 * padding);
+      tooltipBg.setAttribute('height', bbox.height + 2 * padding);
+
+      tooltip.setAttribute('transform', 'translate(' + (loc.x + 15) + ',' + (loc.y - 10) + ')');
+      tooltip.setAttribute('visibility', 'visible');
+
+      // Подсветка выбранной группы
+      var g = evt.currentTarget.closest('.event-group');
+      if (g) {
+        g.setAttribute('data-original-transform', g.getAttribute('transform') || '');
+        g.setAttribute('transform', (g.getAttribute('transform') || '') + ' scale(1.03)');
+      }
+    }
+
+    function hideTooltip(evt) {
+      var svg = evt.target.ownerSVGElement;
+      var tooltip = svg.getElementById('tooltip');
+      tooltip.setAttribute('visibility', 'hidden');
+
+      // Снять масштаб с группы
+      var g = evt.currentTarget.closest('.event-group');
+      if (g) {
+        var orig = g.getAttribute('data-original-transform') || '';
+        g.setAttribute('transform', orig);
+      }
+    }
+  ]]></script>
+
+  <!-- Горизонтальные линии трёх веток -->
+  <line x1="80" y1="180" x2="2700" y2="180" class="axis"/>
+  <line x1="80" y1="450" x2="2700" y2="450" class="axis"/>
+  <line x1="80" y1="720" x2="2700" y2="720" class="axis"/>
+
+  <!-- Подписи веток -->
+  <text x="90" y="150" class="section-title">История компьютерных игр</text>
+  <text x="90" y="420" class="section-title">Игровые движки</text>
+  <text x="90" y="690" class="section-title">Игровые платформы</text>
+
+  <!-- Вертикальная шкала лет -->
+  <g>
+    <line x1="150" y1="120" x2="150" y2="780" class="axis-year"/>
+    <text x="150" y="110" class="year-text">1950</text>
+
+    <line x1="450" y1="120" x2="450" y2="780" class="axis-year"/>
+    <text x="450" y="110" class="year-text">1960</text>
+
+    <line x1="750" y1="120" x2="750" y2="780" class="axis-year"/>
+    <text x="750" y="110" class="year-text">1970</text>
+
+    <line x1="1050" y1="120" x2="1050" y2="780" class="axis-year"/>
+    <text x="1050" y="110" class="year-text">1980</text>
+
+    <line x1="1350" y1="120" x2="1350" y2="780" class="axis-year"/>
+    <text x="1350" y="110" class="year-text">1990</text>
+
+    <line x1="1650" y1="120" x2="1650" y2="780" class="axis-year"/>
+    <text x="1650" y="110" class="year-text">2000</text>
+
+    <line x1="1950" y1="120" x2="1950" y2="780" class="axis-year"/>
+    <text x="1950" y="110" class="year-text">2010</text>
+
+    <line x1="2250" y1="120" x2="2250" y2="780" class="axis-year"/>
+    <text x="2250" y="110" class="year-text">2020</text>
+  </g>
+
+  <!-- ===================== 1. История игр ===================== -->
+
+  <!-- 1950–1960 -->
+  <g class="event-group event-games"
+     onmouseover="showTooltip(evt, '1952 — OXO\n1958 — Tennis for Two\n1962 — Spacewar!')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="200" y="150" width="200" height="60"/>
+    <text x="210" y="170" class="label-small">
+      <tspan x="210" dy="0">1952 — OXO</tspan>
+      <tspan x="210" dy="14">1958 — Tennis for Two</tspan>
+      <tspan x="210" dy="14">1962 — Spacewar!</tspan>
+    </text>
+  </g>
+
+  <!-- 1970-е -->
+  <g class="event-group event-games"
+     onmouseover="showTooltip(evt, '1972 — Pong\n1972 — Magnavox Odyssey\n1978 — Space Invaders')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="650" y="150" width="220" height="60"/>
+    <text x="660" y="170" class="label-small">
+      <tspan x="660" dy="0">1972 — Pong</tspan>
+      <tspan x="660" dy="14">1972 — Magnavox Odyssey</tspan>
+      <tspan x="660" dy="14">1978 — Space Invaders</tspan>
+    </text>
+  </g>
+
+  <!-- 1980-е -->
+  <g class="event-group event-games"
+     onmouseover="showTooltip(evt, '1980 — Pac-Man\n1981 — Donkey Kong\n1983 — кризис рынка в США\n1984 — Tetris\n1985 — Super Mario Bros.\n1986 — The Legend of Zelda')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="950" y="150" width="260" height="80"/>
+    <text x="960" y="170" class="label-small">
+      <tspan x="960" dy="0">1980 — Pac-Man</tspan>
+      <tspan x="960" dy="14">1981 — Donkey Kong</tspan>
+      <tspan x="960" dy="14">1983 — кризис рынка в США</tspan>
+      <tspan x="960" dy="14">1984 — Tetris</tspan>
+      <tspan x="960" dy="14">1985 — Super Mario Bros.</tspan>
+      <tspan x="960" dy="14">1986 — The Legend of Zelda</tspan>
+    </text>
+  </g>
+
+  <!-- 1990-е -->
+  <g class="event-group event-games"
+     onmouseover="showTooltip(evt, '1991 — Sonic the Hedgehog\n1992 — Dune II (RTS)\n1993 — Doom (FPS, 3D)\n1996 — Quake, Pokémon\n1998 — Half-Life, Ocarina of Time\n1999 — Counter-Strike (мод)')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1250" y="150" width="320" height="100"/>
+    <text x="1260" y="170" class="label-small">
+      <tspan x="1260" dy="0">1991 — Sonic the Hedgehog</tspan>
+      <tspan x="1260" dy="14">1992 — Dune II (RTS)</tspan>
+      <tspan x="1260" dy="14">1993 — Doom (FPS, 3D)</tspan>
+      <tspan x="1260" dy="14">1996 — Quake, Pokémon</tspan>
+      <tspan x="1260" dy="14">1998 — Half-Life, Ocarina of Time</tspan>
+      <tspan x="1260" dy="14">1999 — Counter-Strike (мод)</tspan>
+    </text>
+  </g>
+
+  <!-- 2000-е -->
+  <g class="event-group event-games"
+     onmouseover="showTooltip(evt, '2000 — The Sims\n2001 — GTA III (3D open world)\n2004 — World of Warcraft\n2004 — Far Cry, Half-Life 2\n2007 — Portal, BioShock\n2008 — Minecraft')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1550" y="150" width="320" height="100"/>
+    <text x="1560" y="170" class="label-small">
+      <tspan x="1560" dy="0">2000 — The Sims</tspan>
+      <tspan x="1560" dy="14">2001 — GTA III (3D open world)</tspan>
+      <tspan x="1560" dy="14">2004 — World of Warcraft</tspan>
+      <tspan x="1560" dy="14">2004 — Far Cry, Half-Life 2</tspan>
+      <tspan x="1560" dy="14">2007 — Portal, BioShock</tspan>
+      <tspan x="1560" dy="14">2008 — Minecraft</tspan>
+    </text>
+  </g>
+
+  <!-- 2010-е -->
+  <g class="event-group event-games"
+     onmouseover="showTooltip(evt, '2011 — Skyrim\n2013 — The Last of Us, GTA V\n2014–2016 — MOBA, hero-shooter, battle royale\n2016 — Pokémon GO (AR)\n2017 — Fortnite (игра-сервис)')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1850" y="150" width="320" height="100"/>
+    <text x="1860" y="170" class="label-small">
+      <tspan x="1860" dy="0">2011 — Skyrim</tspan>
+      <tspan x="1860" dy="14">2013 — The Last of Us, GTA V</tspan>
+      <tspan x="1860" dy="14">2014–2016 — MOBA, hero-shooter, BR</tspan>
+      <tspan x="1860" dy="14">2016 — Pokémon GO (AR)</tspan>
+      <tspan x="1860" dy="14">2017 — Fortnite (игра-сервис)</tspan>
+    </text>
+  </g>
+
+  <!-- 2020-е -->
+  <g class="event-group event-games"
+     onmouseover="showTooltip(evt, '2020–2024 — рост игр-сервисов\nкроссплей, стриминг, Game Pass\nразвитие VR/AR и инди-сцены')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="2150" y="150" width="320" height="80"/>
+    <text x="2160" y="170" class="label-small">
+      <tspan x="2160" dy="0">2020–2024 — рост игр-сервисов,</tspan>
+      <tspan x="2160" dy="14">кроссплей, стриминг, Game Pass</tspan>
+      <tspan x="2160" dy="14">развитие VR/AR и инди-сцены</tspan>
+    </text>
+  </g>
+
+  <!-- ===================== 2. Игровые движки ===================== -->
+
+  <g class="event-group event-engines"
+     onmouseover="showTooltip(evt, 'До 1990-х — движки встроены в игры\n1992 — Wolfenstein 3D Engine\n1993 — Doom Engine (id Tech 1)\n1996 — Quake Engine (id Tech 2)\n1998 — Unreal Engine 1\n1998 — GoldSrc (Valve)')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1050" y="420" width="320" height="100"/>
+    <text x="1060" y="440" class="label-small">
+      <tspan x="1060" dy="0">до 1990-х — движки встроены в игры</tspan>
+      <tspan x="1060" dy="14">1992 — Wolfenstein 3D Engine</tspan>
+      <tspan x="1060" dy="14">1993 — Doom Engine (id Tech 1)</tspan>
+      <tspan x="1060" dy="14">1996 — Quake Engine (id Tech 2)</tspan>
+      <tspan x="1060" dy="14">1998 — Unreal Engine 1</tspan>
+      <tspan x="1060" dy="14">1998 — GoldSrc (Valve)</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-engines"
+     onmouseover="showTooltip(evt, '1999 — id Tech 3 (Quake III)\n2003 — Source Engine\n2005 — Unreal Engine 3\n2005 — Gamebryo (Oblivion)')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1350" y="420" width="320" height="80"/>
+    <text x="1360" y="440" class="label-small">
+      <tspan x="1360" dy="0">1999 — id Tech 3 (Quake III)</tspan>
+      <tspan x="1360" dy="14">2003 — Source Engine</tspan>
+      <tspan x="1360" dy="14">2005 — Unreal Engine 3</tspan>
+      <tspan x="1360" dy="14">2005 — Gamebryo (Oblivion)</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-engines"
+     onmouseover="showTooltip(evt, '2000-е — рост open-source\nOGRE, Irrlicht и др.')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1550" y="420" width="260" height="60"/>
+    <text x="1560" y="440" class="label-small">
+      <tspan x="1560" dy="0">2000-е — рост open-source</tspan>
+      <tspan x="1560" dy="14">OGRE, Irrlicht и др.</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-engines"
+     onmouseover="showTooltip(evt, '2005–2012 — рост популярности Unity\n2014–2015 — Unreal Engine 4, Unity 5, CryEngine 3\nAAA-движки: Frostbite, Anvil, RE Engine, Snowdrop и др.')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1750" y="420" width="320" height="100"/>
+    <text x="1760" y="440" class="label-small">
+      <tspan x="1760" dy="0">2005–2012 — рост популярности Unity</tspan>
+      <tspan x="1760" dy="14">2014–2015 — Unreal Engine 4, Unity 5,</tspan>
+      <tspan x="1760" dy="14">CryEngine 3</tspan>
+      <tspan x="1760" dy="14">AAA-движки: Frostbite, Anvil,</tspan>
+      <tspan x="1760" dy="14">RE Engine, Snowdrop и др.</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-engines"
+     onmouseover="showTooltip(evt, '2021–2024 — Unreal Engine 5 (Nanite, Lumen)\nрост low-code/no-code, визуальные скрипты,\nпроприетарные студийные движки')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="2050" y="420" width="320" height="80"/>
+    <text x="2060" y="440" class="label-small">
+      <tspan x="2060" dy="0">2021–2024 — Unreal Engine 5</tspan>
+      <tspan x="2060" dy="14">Nanite, Lumen</tspan>
+      <tspan x="2060" dy="14">рост low-code/no-code, визуальные</tspan>
+      <tspan x="2060" dy="14">скрипты, проприетарные движки</tspan>
+    </text>
+  </g>
+
+  <!-- ===================== 3. Платформы ===================== -->
+
+  <g class="event-group event-platforms"
+     onmouseover="showTooltip(evt, '1972 — Magnavox Odyssey\n1970-е — аркадные автоматы\nAtari 2600 и др.')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="650" y="690" width="260" height="80"/>
+    <text x="660" y="710" class="label-small">
+      <tspan x="660" dy="0">1972 — Magnavox Odyssey</tspan>
+      <tspan x="660" dy="14">1970-е — аркадные автоматы</tspan>
+      <tspan x="660" dy="14">Atari 2600 и др.</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-platforms"
+     onmouseover="showTooltip(evt, '1983 — Famicom / NES\n1985 — Sega Master System\n1989 — Nintendo Game Boy\n1980-е — C64, ZX Spectrum, Amiga, IBM PC')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="950" y="690" width="320" height="100"/>
+    <text x="960" y="710" class="label-small">
+      <tspan x="960" dy="0">1983 — Famicom / NES</tspan>
+      <tspan x="960" dy="14">1985 — Sega Master System</tspan>
+      <tspan x="960" dy="14">1989 — Nintendo Game Boy</tspan>
+      <tspan x="960" dy="14">1980-е — C64, ZX Spectrum,</tspan>
+      <tspan x="960" dy="14">Amiga, IBM PC</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-platforms"
+     onmouseover="showTooltip(evt, '1990 — SNES\nSega Mega Drive / Genesis\n1994 — Sony PlayStation\n1996 — Nintendo 64\n1998 — Sega Dreamcast')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1250" y="690" width="320" height="100"/>
+    <text x="1260" y="710" class="label-small">
+      <tspan x="1260" dy="0">1990 — SNES</tspan>
+      <tspan x="1260" dy="14">Sega Mega Drive / Genesis</tspan>
+      <tspan x="1260" dy="14">1994 — Sony PlayStation</tspan>
+      <tspan x="1260" dy="14">1996 — Nintendo 64</tspan>
+      <tspan x="1260" dy="14">1998 — Sega Dreamcast</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-platforms"
+     onmouseover="showTooltip(evt, '1990-е — рост PC-гейминга\nVGA, звуковые карты, CD-ROM')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1550" y="690" width="260" height="60"/>
+    <text x="1560" y="710" class="label-small">
+      <tspan x="1560" dy="0">1990-е — рост PC-гейминга</tspan>
+      <tspan x="1560" dy="14">VGA, звуковые карты, CD-ROM</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-platforms"
+     onmouseover="showTooltip(evt, '2000 — PlayStation 2\n2001 — GameCube, Xbox\n2005 — Xbox 360 (Xbox Live)\n2006 — PS3, Nintendo Wii\n2007–2009 — смартфоны')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1650" y="690" width="320" height="100"/>
+    <text x="1660" y="710" class="label-small">
+      <tspan x="1660" dy="0">2000 — PlayStation 2</tspan>
+      <tspan x="1660" dy="14">2001 — GameCube, Xbox</tspan>
+      <tspan x="1660" dy="14">2005 — Xbox 360 (Xbox Live)</tspan>
+      <tspan x="1660" dy="14">2006 — PS3, Nintendo Wii</tspan>
+      <tspan x="1660" dy="14">2007–2009 — смартфоны</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-platforms"
+     onmouseover="showTooltip(evt, '2013 — PS4, Xbox One\n2012 — Wii U\n2017 — Nintendo Switch\n2010-е — мобильные, браузерные, соц. платформы, VR (Oculus, Vive)')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="1950" y="690" width="320" height="100"/>
+    <text x="1960" y="710" class="label-small">
+      <tspan x="1960" dy="0">2013 — PS4, Xbox One</tspan>
+      <tspan x="1960" dy="14">2012 — Wii U</tspan>
+      <tspan x="1960" dy="14">2017 — Nintendo Switch</tspan>
+      <tspan x="1960" dy="14">2010-е — мобильные, браузерные,</tspan>
+      <tspan x="1960" dy="14">соц. платформы, VR (Oculus, Vive)</tspan>
+    </text>
+  </g>
+
+  <g class="event-group event-platforms"
+     onmouseover="showTooltip(evt, '2020 — PS5, Xbox Series X|S\nоблачный гейминг: Stadia, GeForce Now, Xbox Cloud\nMeta Quest, PS VR2')"
+     onmouseout="hideTooltip(evt)">
+    <rect x="2250" y="690" width="320" height="80"/>
+    <text x="2260" y="710" class="label-small">
+      <tspan x="2260" dy="0">2020 — PS5, Xbox Series X|S</tspan>
+      <tspan x="2260" dy="14">облачный гейминг: Stadia,</tspan>
+      <tspan x="2260" dy="14">GeForce Now, Xbox Cloud,</tspan>
+      <tspan x="2260" dy="14">Meta Quest, PS VR2</tspan>
+    </text>
+  </g>
+
+  <!-- Tooltip (общий для всех) -->
+  <g id="tooltip" visibility="hidden">
+    <rect id="tooltip-bg" class="tooltip-bg" x="0" y="0" width="10" height="10"/>
+    <text id="tooltip-text" class="tooltip-text" x="4" y="14"></text>
+  </g>
+
+</svg>

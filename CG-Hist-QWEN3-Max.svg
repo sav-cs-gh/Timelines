@@ -1,0 +1,139 @@
+<svg width="1850" height="900" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif; background: #fff">
+  <!-- Заголовок -->
+  <text x="925" y="40" text-anchor="middle" font-size="24" font-weight="bold">История компьютерных игр</text>
+  
+  <!-- Ось времени -->
+  <line x1="100" y1="750" x2="1750" y2="750" stroke="#333" stroke-width="1.5"/>
+  
+  <!-- Годы на оси (0 градусов) -->
+  <text x="100" y="770" text-anchor="middle" font-size="12">1970</text>
+  <text x="300" y="770" text-anchor="middle" font-size="12">1975</text>
+  <text x="440" y="770" text-anchor="middle" font-size="12">1980</text>
+  <text x="580" y="770" text-anchor="middle" font-size="12">1985</text>
+  <text x="720" y="770" text-anchor="middle" font-size="12">1990</text>
+  <text x="860" y="770" text-anchor="middle" font-size="12">1995</text>
+  <text x="1000" y="770" text-anchor="middle" font-size="12">2000</text>
+  <text x="1140" y="770" text-anchor="middle" font-size="12">2005</text>
+  <text x="1280" y="770" text-anchor="middle" font-size="12">2010</text>
+  <text x="1420" y="770" text-anchor="middle" font-size="12">2015</text>
+  <text x="1560" y="770" text-anchor="middle" font-size="12">2020</text>
+  <text x="1750" y="770" text-anchor="middle" font-size="12">2025</text>
+  
+  <!-- Вертикальные сетки -->
+  <line x1="100" y1="100" x2="100" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="300" y1="100" x2="300" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="440" y1="100" x2="440" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="580" y1="100" x2="580" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="720" y1="100" x2="720" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="860" y1="100" x2="860" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1000" y1="100" x2="1000" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1140" y1="100" x2="1140" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1280" y1="100" x2="1280" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1420" y1="100" x2="1420" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1560" y1="100" x2="1560" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1750" y1="100" x2="1750" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  
+  <!-- Легенда с корректировкой позиций -->
+  <text x="50" y="140" font-size="16" font-weight="bold">Игровые платформы</text>
+  <text x="50" y="470" font-size="16" font-weight="bold">Игровые движки</text>
+  <text x="50" y="300" font-size="14" fill="#cc0000" font-weight="bold">Ключевые игры</text>
+  <text x="50" y="650" font-size="14" fill="#666" font-weight="bold">Революционные технологии</text>
+  
+  <!-- Линия платформ (синяя) -->
+  <path d="M100,170 H1750" stroke="#0066cc" stroke-width="2.5" fill="none"/>
+  
+  <!-- События платформ -->
+  <g transform="translate(0,0)">
+    <!-- Pong -->
+    <circle cx="180" cy="170" r="6" fill="#0066cc" stroke="#003366" stroke-width="1"/>
+    <text x="180" y="210" transform="rotate(45, 180, 210)" text-anchor="start" font-size="11">Pong (Arcade)</text>
+    <text x="180" y="245" transform="rotate(45, 180, 245)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Pong (1972)</text>
+    <text x="180" y="275" transform="rotate(45, 180, 275)" text-anchor="start" font-size="9" fill="#333">Первая массовая аркада</text>
+    
+    <!-- Atari 2600 -->
+    <circle cx="240" cy="170" r="6" fill="#0066cc" stroke="#003366" stroke-width="1"/>
+    <text x="240" y="210" transform="rotate(45, 240, 210)" text-anchor="start" font-size="11">Atari 2600</text>
+    <text x="240" y="245" transform="rotate(45, 240, 245)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Space Invaders (1980)</text>
+    <text x="240" y="275" transform="rotate(45, 240, 275)" text-anchor="start" font-size="9" fill="#333">Начало домашних консолей</text>
+    
+    <!-- Famicom/NES -->
+    <circle cx="496" cy="170" r="6" fill="#0066cc" stroke="#003366" stroke-width="1"/>
+    <text x="496" y="210" transform="rotate(45, 496, 210)" text-anchor="start" font-size="11">Famicom (Japan)</text>
+    <text x="496" y="245" transform="rotate(45, 496, 245)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Super Mario Bros. (1985)</text>
+    <text x="496" y="275" transform="rotate(45, 496, 275)" text-anchor="start" font-size="9" fill="#333">Революция в геймдизайне</text>
+    
+    <!-- PlayStation -->
+    <circle cx="832" cy="170" r="6" fill="#0066cc" stroke="#003366" stroke-width="1"/>
+    <text x="832" y="210" transform="rotate(45, 832, 210)" text-anchor="start" font-size="11">PlayStation</text>
+    <text x="832" y="245" transform="rotate(45, 832, 245)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Final Fantasy VII (1997)</text>
+    <text x="832" y="275" transform="rotate(45, 832, 275)" text-anchor="start" font-size="9" fill="#333">3D-графика нового уровня</text>
+    
+    <!-- Xbox -->
+    <circle cx="1028" cy="170" r="6" fill="#0066cc" stroke="#003366" stroke-width="1"/>
+    <text x="1028" y="210" transform="rotate(45, 1028, 210)" text-anchor="start" font-size="11">Xbox</text>
+    <text x="1028" y="245" transform="rotate(45, 1028, 245)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Halo (2001)</text>
+    <text x="1028" y="275" transform="rotate(45, 1028, 275)" text-anchor="start" font-size="9" fill="#333">Онлайн-мультиплеер</text>
+    
+    <!-- Nintendo Switch -->
+    <circle cx="1420" cy="170" r="6" fill="#0066cc" stroke="#003366" stroke-width="1"/>
+    <text x="1420" y="210" transform="rotate(45, 1420, 210)" text-anchor="start" font-size="11">Nintendo Switch</text>
+    <text x="1420" y="245" transform="rotate(45, 1420, 245)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Zelda: Breath of the Wild (2017)</text>
+    <text x="1420" y="275" transform="rotate(45, 1420, 275)" text-anchor="start" font-size="9" fill="#333">Гибридный формат</text>
+  </g>
+  
+  <!-- Линия движков (зеленая) -->
+  <path d="M100,500 H1750" stroke="#009900" stroke-width="2.5" fill="none"/>
+  
+  <!-- События движков с исправленным интервалом -->
+  <g transform="translate(0,0)">
+    <!-- id Tech 1 -->
+    <circle cx="792" cy="500" r="6" fill="#009900" stroke="#006600" stroke-width="1"/>
+    <text x="792" y="460" transform="rotate(45, 792, 460)" text-anchor="start" font-size="11">id Tech 1 (1993)</text>
+    <text x="792" y="430" transform="rotate(45, 792, 430)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Doom</text>
+    <text x="792" y="400" transform="rotate(45, 792, 400)" text-anchor="start" font-size="9" fill="#333">Первый true 3D-движок</text>
+    
+    <!-- Unreal Engine 1 -->
+    <circle cx="944" cy="500" r="6" fill="#009900" stroke="#006600" stroke-width="1"/>
+    <text x="944" y="460" transform="rotate(45, 944, 460)" text-anchor="start" font-size="11">Unreal Engine 1 (1998)</text>
+    <text x="944" y="430" transform="rotate(45, 944, 430)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Unreal Tournament</text>
+    <text x="944" y="400" transform="rotate(45, 944, 400)" text-anchor="start" font-size="9" fill="#333">Скриптовый язык UnrealScript</text>
+    
+    <!-- Source Engine -->
+    <circle cx="1112" cy="500" r="6" fill="#009900" stroke="#006600" stroke-width="1"/>
+    <text x="1112" y="460" transform="rotate(45, 1112, 460)" text-anchor="start" font-size="11">Source Engine (2004)</text>
+    <text x="1112" y="430" transform="rotate(45, 1112, 430)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Half-Life 2</text>
+    <text x="1112" y="400" transform="rotate(45, 1112, 400)" text-anchor="start" font-size="9" fill="#333">Физика Havok</text>
+    
+    <!-- Unity -->
+    <circle cx="1200" cy="500" r="6" fill="#009900" stroke="#006600" stroke-width="1"/>
+    <text x="1200" y="460" transform="rotate(45, 1200, 460)" text-anchor="start" font-size="11">Unity 1.0 (2005)</text>
+    <text x="1200" y="430" transform="rotate(45, 1200, 430)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Cuphead (2017)</text>
+    <text x="1200" y="400" transform="rotate(45, 1200, 400)" text-anchor="start" font-size="9" fill="#333">Доступность для инди</text>
+    
+    <!-- Unreal Engine 5 -->
+    <circle cx="1660" cy="500" r="6" fill="#009900" stroke="#006600" stroke-width="1"/>
+    <text x="1660" y="460" transform="rotate(45, 1660, 460)" text-anchor="start" font-size="11">Unreal Engine 5 (2022)</text>
+    <text x="1660" y="430" transform="rotate(45, 1660, 430)" text-anchor="start" font-size="10" fill="#cc0000" font-weight="bold">Elden Ring</text>
+    <text x="1660" y="400" transform="rotate(45, 1660, 400)" text-anchor="start" font-size="9" fill="#333">Nanite &amp; Lumen</text>
+  </g>
+  
+  <!-- Технологии -->
+  <g transform="translate(0,0)">
+    <circle cx="860" cy="650" r="6" fill="#666" stroke="#333" stroke-width="1"/>
+    <text x="860" y="690" transform="rotate(45, 860, 690)" text-anchor="start" font-size="11">Steam (2003)</text>
+    <text x="860" y="720" transform="rotate(45, 860, 720)" text-anchor="start" font-size="10" fill="#333">Цифровая дистрибуция</text>
+    
+    <circle cx="1240" cy="650" r="6" fill="#666" stroke="#333" stroke-width="1"/>
+    <text x="1240" y="690" transform="rotate(45, 1240, 690)" text-anchor="start" font-size="11">VR-революция (2016)</text>
+    <text x="1240" y="720" transform="rotate(45, 1240, 720)" text-anchor="start" font-size="10" fill="#333">Oculus Rift &amp; HTC Vive</text>
+    
+    <circle cx="1560" cy="650" r="6" fill="#666" stroke="#333" stroke-width="1"/>
+    <text x="1560" y="690" transform="rotate(45, 1560, 690)" text-anchor="start" font-size="11">Облачные игры (2020)</text>
+    <text x="1560" y="720" transform="rotate(45, 1560, 720)" text-anchor="start" font-size="10" fill="#333">GeForce Now, Xbox Cloud</text>
+  </g>
+  
+  <!-- Подпись -->
+  <text x="925" y="860" text-anchor="middle" font-size="12" fill="#666">
+    Источники: Wikipedia, IGN, Game Developer Magazine. Данные обновлены на декабрь 2025 г.
+  </text>
+</svg>

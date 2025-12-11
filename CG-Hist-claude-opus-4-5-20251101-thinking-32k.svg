@@ -1,0 +1,547 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900">
+  <defs>
+    <!-- Градиенты -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23"/>
+      <stop offset="100%" style="stop-color:#1a1a3e"/>
+    </linearGradient>
+    
+    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="25%" style="stop-color:#feca57"/>
+      <stop offset="50%" style="stop-color:#48dbfb"/>
+      <stop offset="75%" style="stop-color:#ff9ff3"/>
+      <stop offset="100%" style="stop-color:#54a0ff"/>
+    </linearGradient>
+    
+    <linearGradient id="platformGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d2d3"/>
+      <stop offset="100%" style="stop-color:#01a3a4"/>
+    </linearGradient>
+    
+    <linearGradient id="engineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9f43"/>
+      <stop offset="100%" style="stop-color:#ee5a24"/>
+    </linearGradient>
+    
+    <linearGradient id="mobileGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a29bfe"/>
+      <stop offset="100%" style="stop-color:#6c5ce7"/>
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Фон -->
+  <rect width="1800" height="900" fill="url(#bgGrad)"/>
+  
+  <!-- Сетка -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="900"/>
+    <line x1="280" y1="0" x2="280" y2="900"/>
+    <line x1="520" y1="0" x2="520" y2="900"/>
+    <line x1="780" y1="0" x2="780" y2="900"/>
+    <line x1="1100" y1="0" x2="1100" y2="900"/>
+    <line x1="1420" y1="0" x2="1420" y2="900"/>
+    <line x1="1700" y1="0" x2="1700" y2="900"/>
+  </g>
+  
+  <!-- Заголовок -->
+  <text x="900" y="45" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="bold" filter="url(#glow)">
+    🎮 ИСТОРИЯ КОМПЬЮТЕРНЫХ ИГР
+  </text>
+  <text x="900" y="70" text-anchor="middle" fill="#888888" font-family="Arial, sans-serif" font-size="14">
+    Платформы • Движки • Ключевые события (1972-2024)
+  </text>
+  
+  <!-- Главная временная линия -->
+  <rect x="80" y="95" width="1640" height="8" rx="4" fill="url(#timelineGrad)" filter="url(#glow)"/>
+  
+  <!-- Маркеры годов (увеличенное расстояние) -->
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">
+    <g>
+      <circle cx="100" cy="99" r="8" fill="#ff6b6b"/>
+      <text x="100" y="128" font-weight="bold">1972</text>
+    </g>
+    <g>
+      <circle cx="280" cy="99" r="8" fill="#ff8a5c"/>
+      <text x="280" y="128" font-weight="bold">1980</text>
+    </g>
+    <g>
+      <circle cx="520" cy="99" r="8" fill="#feca57"/>
+      <text x="520" y="128" font-weight="bold">1990</text>
+    </g>
+    <g>
+      <circle cx="780" cy="99" r="8" fill="#48dbfb"/>
+      <text x="780" y="128" font-weight="bold">2000</text>
+    </g>
+    <g>
+      <circle cx="1100" cy="99" r="8" fill="#ff9ff3"/>
+      <text x="1100" y="128" font-weight="bold">2010</text>
+    </g>
+    <g>
+      <circle cx="1420" cy="99" r="8" fill="#54a0ff"/>
+      <text x="1420" y="128" font-weight="bold">2020</text>
+    </g>
+    <g>
+      <circle cx="1700" cy="99" r="8" fill="#5f27cd"/>
+      <text x="1700" y="128" font-weight="bold">2024</text>
+    </g>
+  </g>
+  
+  <!-- Легенда -->
+  <g transform="translate(1530, 150)">
+    <rect x="0" y="0" width="240" height="110" rx="10" fill="#1e1e3f" stroke="#333366" stroke-width="1"/>
+    <text x="120" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="13" font-weight="bold">ЛЕГЕНДА</text>
+    <rect x="20" y="42" width="24" height="14" rx="3" fill="url(#platformGrad)"/>
+    <text x="55" y="54" fill="#00d2d3" font-family="Arial, sans-serif" font-size="12">Игровые платформы</text>
+    <rect x="20" y="65" width="24" height="14" rx="3" fill="url(#engineGrad)"/>
+    <text x="55" y="77" fill="#ff9f43" font-family="Arial, sans-serif" font-size="12">Игровые движки</text>
+    <rect x="20" y="88" width="24" height="14" rx="3" fill="url(#mobileGrad)"/>
+    <text x="55" y="100" fill="#a29bfe" font-family="Arial, sans-serif" font-size="12">ПК / Мобильные / VR</text>
+  </g>
+  
+  <!-- ========== ПЛАТФОРМЫ (верхняя ветка) ========== -->
+  <g id="platforms">
+    <!-- Линия ветки -->
+    <path d="M 100 99 Q 100 170, 100 180" stroke="#00d2d3" stroke-width="2" fill="none" stroke-dasharray="4,2"/>
+    <line x1="100" y1="180" x2="1700" y2="180" stroke="#00d2d3" stroke-width="2" opacity="0.5"/>
+    
+    <text x="50" y="185" fill="#00d2d3" font-family="Arial, sans-serif" font-size="12" font-weight="bold" transform="rotate(-90, 50, 185)">ПЛАТФОРМЫ</text>
+    
+    <!-- Magnavox Odyssey 1972 -->
+    <g transform="translate(100, 160)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="30" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Magnavox</text>
+      <text x="0" y="42" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Odyssey</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1972</text>
+    </g>
+    
+    <!-- Atari 2600 1977 -->
+    <g transform="translate(190, 160)" filter="url(#shadow)">
+      <rect x="-35" y="10" width="70" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="30" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Atari 2600</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1977</text>
+    </g>
+    
+    <!-- NES 1983 -->
+    <g transform="translate(340, 160)" filter="url(#shadow)">
+      <rect x="-35" y="10" width="70" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="28" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">NES</text>
+      <text x="0" y="42" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">Famicom</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1983</text>
+    </g>
+    
+    <!-- Sega Genesis 1988 -->
+    <g transform="translate(460, 160)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="30" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Sega Genesis</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1988</text>
+    </g>
+    
+    <!-- Game Boy 1989 -->
+    <g transform="translate(520, 220)" filter="url(#shadow)">
+      <rect x="-35" y="0" width="70" height="45" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Game Boy</text>
+      <text x="0" y="38" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1989</text>
+    </g>
+    
+    <!-- PlayStation 1994 -->
+    <g transform="translate(620, 160)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">PlayStation</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1994</text>
+    </g>
+    
+    <!-- N64 1996 -->
+    <g transform="translate(720, 160)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Nintendo 64</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1996</text>
+    </g>
+    
+    <!-- PS2 2000 -->
+    <g transform="translate(780, 220)" filter="url(#shadow)">
+      <rect x="-30" y="0" width="60" height="45" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">PS2</text>
+      <text x="0" y="38" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2000</text>
+    </g>
+    
+    <!-- Xbox 2001 -->
+    <g transform="translate(860, 160)" filter="url(#shadow)">
+      <rect x="-30" y="10" width="60" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Xbox</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2001</text>
+    </g>
+    
+    <!-- Nintendo DS 2004 -->
+    <g transform="translate(950, 220)" filter="url(#shadow)">
+      <rect x="-40" y="0" width="80" height="45" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Nintendo DS</text>
+      <text x="0" y="38" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2004</text>
+    </g>
+    
+    <!-- Xbox 360 2005 -->
+    <g transform="translate(1000, 160)" filter="url(#shadow)">
+      <rect x="-35" y="10" width="70" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Xbox 360</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2005</text>
+    </g>
+    
+    <!-- PS3/Wii 2006 -->
+    <g transform="translate(1100, 160)" filter="url(#shadow)">
+      <rect x="-35" y="10" width="70" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="28" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">PS3 / Wii</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2006</text>
+    </g>
+    
+    <!-- PS4/Xbox One 2013 -->
+    <g transform="translate(1220, 160)" filter="url(#shadow)">
+      <rect x="-45" y="10" width="90" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">PS4 / Xbox One</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2013</text>
+    </g>
+    
+    <!-- Nintendo Switch 2017 -->
+    <g transform="translate(1340, 160)" filter="url(#shadow)">
+      <rect x="-45" y="10" width="90" height="50" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Switch</text>
+      <text x="0" y="55" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2017</text>
+    </g>
+    
+    <!-- PS5/Xbox Series 2020 -->
+    <g transform="translate(1420, 220)" filter="url(#shadow)">
+      <rect x="-50" y="0" width="100" height="45" rx="6" fill="url(#platformGrad)"/>
+      <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">PS5 / Xbox Series</text>
+      <text x="0" y="38" text-anchor="middle" fill="#003333" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2020</text>
+    </g>
+  </g>
+  
+  <!-- ========== ДВИЖКИ (нижняя ветка) ========== -->
+  <g id="engines">
+    <!-- Линия ветки -->
+    <line x1="560" y1="320" x2="1700" y2="320" stroke="#ff9f43" stroke-width="2" opacity="0.5"/>
+    
+    <text x="50" y="325" fill="#ff9f43" font-family="Arial, sans-serif" font-size="12" font-weight="bold" transform="rotate(-90, 50, 340)">ДВИЖКИ</text>
+    
+    <!-- id Tech 1 (Doom) 1993 -->
+    <g transform="translate(590, 300)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="28" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">id Tech 1</text>
+      <text x="0" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">(Doom)</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1993</text>
+    </g>
+    
+    <!-- Build Engine 1995 -->
+    <g transform="translate(670, 360)" filter="url(#shadow)">
+      <rect x="-40" y="0" width="80" height="50" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Build Engine</text>
+      <text x="0" y="42" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1995</text>
+    </g>
+    
+    <!-- Quake Engine 1996 -->
+    <g transform="translate(710, 300)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Quake Engine</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1996</text>
+    </g>
+    
+    <!-- GoldSrc 1998 -->
+    <g transform="translate(780, 360)" filter="url(#shadow)">
+      <rect x="-40" y="0" width="80" height="50" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="18" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">GoldSrc</text>
+      <text x="0" y="30" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">(Half-Life)</text>
+      <text x="0" y="42" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1998</text>
+    </g>
+    
+    <!-- Unreal Engine 1 1998 -->
+    <g transform="translate(830, 300)" filter="url(#shadow)">
+      <rect x="-45" y="10" width="90" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Unreal Engine 1</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1998</text>
+    </g>
+    
+    <!-- UE2 2002 -->
+    <g transform="translate(920, 300)" filter="url(#shadow)">
+      <rect x="-30" y="10" width="60" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">UE2</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2002</text>
+    </g>
+    
+    <!-- Source Engine 2004 -->
+    <g transform="translate(980, 360)" filter="url(#shadow)">
+      <rect x="-40" y="0" width="80" height="50" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Source Engine</text>
+      <text x="0" y="42" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2004</text>
+    </g>
+    
+    <!-- CryEngine 2004 -->
+    <g transform="translate(1000, 300)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">CryEngine</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2004</text>
+    </g>
+    
+    <!-- Unity 2005 -->
+    <g transform="translate(1080, 300)" filter="url(#shadow)">
+      <rect x="-35" y="10" width="70" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Unity</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2005</text>
+    </g>
+    
+    <!-- UE3 2006 -->
+    <g transform="translate(1100, 360)" filter="url(#shadow)">
+      <rect x="-30" y="0" width="60" height="50" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="22" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">UE3</text>
+      <text x="0" y="42" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2006</text>
+    </g>
+    
+    <!-- Frostbite 2008 -->
+    <g transform="translate(1180, 300)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Frostbite</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2008</text>
+    </g>
+    
+    <!-- Godot 2014 -->
+    <g transform="translate(1280, 360)" filter="url(#shadow)">
+      <rect x="-35" y="0" width="70" height="50" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="22" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Godot</text>
+      <text x="0" y="42" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2014</text>
+    </g>
+    
+    <!-- UE4 2014 -->
+    <g transform="translate(1280, 300)" filter="url(#shadow)">
+      <rect x="-30" y="10" width="60" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">UE4</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2014</text>
+    </g>
+    
+    <!-- Source 2 2015 -->
+    <g transform="translate(1360, 360)" filter="url(#shadow)">
+      <rect x="-40" y="0" width="80" height="50" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="22" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Source 2</text>
+      <text x="0" y="42" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2015</text>
+    </g>
+    
+    <!-- UE5 2022 -->
+    <g transform="translate(1490, 300)" filter="url(#shadow)">
+      <rect x="-30" y="10" width="60" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">UE5</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2022</text>
+    </g>
+    
+    <!-- Godot 4.0 2023 -->
+    <g transform="translate(1600, 300)" filter="url(#shadow)">
+      <rect x="-40" y="10" width="80" height="55" rx="6" fill="url(#engineGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Godot 4.0</text>
+      <text x="0" y="58" text-anchor="middle" fill="#4a1500" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2023</text>
+    </g>
+  </g>
+  
+  <!-- ========== МОБИЛЬНЫЕ/ПК/ДИСТРИБУЦИЯ ========== -->
+  <g id="mobile-pc">
+    <!-- Линия ветки -->
+    <line x1="280" y1="460" x2="1600" y2="460" stroke="#a29bfe" stroke-width="2" opacity="0.5"/>
+    
+    <text x="50" y="465" fill="#a29bfe" font-family="Arial, sans-serif" font-size="11" font-weight="bold" transform="rotate(-90, 50, 490)">ПК / МОБИЛЬНЫЕ / VR</text>
+    
+    <!-- IBM PC 1981 -->
+    <g transform="translate(300, 440)" filter="url(#shadow)">
+      <rect x="-35" y="10" width="70" height="50" rx="6" fill="url(#mobileGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">IBM PC</text>
+      <text x="0" y="55" text-anchor="middle" fill="#2d1b69" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1981</text>
+    </g>
+    
+    <!-- Steam 2003 -->
+    <g transform="translate(880, 440)" filter="url(#shadow)">
+      <rect x="-35" y="10" width="70" height="50" rx="6" fill="url(#mobileGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Steam</text>
+      <text x="0" y="55" text-anchor="middle" fill="#2d1b69" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2003</text>
+    </g>
+    
+    <!-- App Store / Android 2008 -->
+    <g transform="translate(1150, 440)" filter="url(#shadow)">
+      <rect x="-50" y="10" width="100" height="50" rx="6" fill="url(#mobileGrad)"/>
+      <text x="0" y="28" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">App Store</text>
+      <text x="0" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Android Market</text>
+      <text x="0" y="55" text-anchor="middle" fill="#2d1b69" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2008</text>
+    </g>
+    
+    <!-- Oculus Rift 2016 -->
+    <g transform="translate(1320, 440)" filter="url(#shadow)">
+      <rect x="-45" y="10" width="90" height="50" rx="6" fill="url(#mobileGrad)"/>
+      <text x="0" y="28" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Oculus Rift</text>
+      <text x="0" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">(VR Era)</text>
+      <text x="0" y="55" text-anchor="middle" fill="#2d1b69" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2016</text>
+    </g>
+    
+    <!-- Steam Deck 2022 -->
+    <g transform="translate(1490, 440)" filter="url(#shadow)">
+      <rect x="-45" y="10" width="90" height="50" rx="6" fill="url(#mobileGrad)"/>
+      <text x="0" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Steam Deck</text>
+      <text x="0" y="55" text-anchor="middle" fill="#2d1b69" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2022</text>
+    </g>
+  </g>
+  
+  <!-- ========== ЗНАКОВЫЕ ИГРЫ ========== -->
+  <g id="games">
+    <text x="900" y="545" text-anchor="middle" fill="#ffeaa7" font-family="Arial, sans-serif" font-size="16" font-weight="bold">⭐ ЗНАКОВЫЕ ИГРЫ ⭐</text>
+    
+    <g font-family="Arial, sans-serif">
+      <!-- Pong -->
+      <g transform="translate(100, 565)">
+        <rect x="-40" y="0" width="80" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#dfe6e9" font-size="11" font-weight="bold">🏓 Pong</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">1972</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Atari</text>
+      </g>
+      
+      <!-- Pac-Man -->
+      <g transform="translate(220, 565)">
+        <rect x="-40" y="0" width="80" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#fdcb6e" font-size="11" font-weight="bold">Pac-Man</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">1980</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Namco</text>
+      </g>
+      
+      <!-- Tetris -->
+      <g transform="translate(340, 565)">
+        <rect x="-40" y="0" width="80" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#00cec9" font-size="11" font-weight="bold">Tetris</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">1984</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">А. Пажитнов</text>
+      </g>
+      
+      <!-- Super Mario -->
+      <g transform="translate(460, 565)">
+        <rect x="-45" y="0" width="90" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#e17055" font-size="10" font-weight="bold">Super Mario Bros</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">1985</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Nintendo</text>
+      </g>
+      
+      <!-- Doom -->
+      <g transform="translate(600, 565)">
+        <rect x="-40" y="0" width="80" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#d63031" font-size="11" font-weight="bold">DOOM</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">1993</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">id Software</text>
+      </g>
+      
+      <!-- Half-Life -->
+      <g transform="translate(740, 565)">
+        <rect x="-40" y="0" width="80" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#ff7675" font-size="11" font-weight="bold">Half-Life</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">1998</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Valve</text>
+      </g>
+      
+      <!-- GTA 3 -->
+      <g transform="translate(880, 565)">
+        <rect x="-40" y="0" width="80" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#a29bfe" font-size="11" font-weight="bold">GTA III</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">2001</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Rockstar</text>
+      </g>
+      
+      <!-- WoW -->
+      <g transform="translate(1020, 565)">
+        <rect x="-45" y="0" width="90" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#fdcb6e" font-size="10" font-weight="bold">World of Warcraft</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">2004</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Blizzard</text>
+      </g>
+      
+      <!-- Minecraft -->
+      <g transform="translate(1160, 565)">
+        <rect x="-40" y="0" width="80" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#55efc4" font-size="10" font-weight="bold">Minecraft</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">2011</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Mojang</text>
+      </g>
+      
+      <!-- Fortnite -->
+      <g transform="translate(1300, 565)">
+        <rect x="-40" y="0" width="80" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#81ecec" font-size="10" font-weight="bold">Fortnite</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">2017</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Epic Games</text>
+      </g>
+      
+      <!-- Elden Ring -->
+      <g transform="translate(1440, 565)">
+        <rect x="-45" y="0" width="90" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#ffeaa7" font-size="10" font-weight="bold">Elden Ring</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">2022</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">FromSoftware</text>
+      </g>
+      
+      <!-- Baldur's Gate 3 -->
+      <g transform="translate(1600, 565)">
+        <rect x="-55" y="0" width="110" height="60" rx="8" fill="#2d3436" stroke="#636e72" stroke-width="1"/>
+        <text x="0" y="22" text-anchor="middle" fill="#fab1a0" font-size="10" font-weight="bold">Baldur's Gate 3</text>
+        <text x="0" y="38" text-anchor="middle" fill="#74b9ff" font-size="10">2023</text>
+        <text x="0" y="52" text-anchor="middle" fill="#636e72" font-size="8">Larian Studios</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- ========== ЭПОХИ ========== -->
+  <g id="eras" font-family="Arial, sans-serif">
+    <text x="900" y="670" text-anchor="middle" fill="#888888" font-size="15" font-weight="bold">ЭПОХИ РАЗВИТИЯ ИНДУСТРИИ</text>
+    
+    <g transform="translate(0, 690)">
+      <rect x="80" y="0" width="200" height="65" rx="10" fill="#c0392b" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+      <text x="180" y="25" text-anchor="middle" fill="#e74c3c" font-size="12" font-weight="bold">🕹️ АРКАДНАЯ ЭРА</text>
+      <text x="180" y="45" text-anchor="middle" fill="#e74c3c" font-size="11">1970 — 1983</text>
+      
+      <rect x="300" y="0" width="200" height="65" rx="10" fill="#d35400" fill-opacity="0.3" stroke="#e67e22" stroke-width="1"/>
+      <text x="400" y="25" text-anchor="middle" fill="#e67e22" font-size="12" font-weight="bold">📺 КОНСОЛЬНАЯ ЭРА</text>
+      <text x="400" y="45" text-anchor="middle" fill="#e67e22" font-size="11">1983 — 1994</text>
+      
+      <rect x="520" y="0" width="200" height="65" rx="10" fill="#27ae60" fill-opacity="0.3" stroke="#2ecc71" stroke-width="1"/>
+      <text x="620" y="25" text-anchor="middle" fill="#2ecc71" font-size="12" font-weight="bold">💿 3D РЕВОЛЮЦИЯ</text>
+      <text x="620" y="45" text-anchor="middle" fill="#2ecc71" font-size="11">1994 — 2005</text>
+      
+      <rect x="740" y="0" width="200" height="65" rx="10" fill="#2980b9" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+      <text x="840" y="25" text-anchor="middle" fill="#3498db" font-size="12" font-weight="bold">🌐 HD / ОНЛАЙН</text>
+      <text x="840" y="45" text-anchor="middle" fill="#3498db" font-size="11">2005 — 2013</text>
+      
+      <rect x="960" y="0" width="200" height="65" rx="10" fill="#8e44ad" fill-opacity="0.3" stroke="#9b59b6" stroke-width="1"/>
+      <text x="1060" y="25" text-anchor="middle" fill="#9b59b6" font-size="12" font-weight="bold">📱 МОБИЛЬНАЯ ЭРА</text>
+      <text x="1060" y="45" text-anchor="middle" fill="#9b59b6" font-size="11">2008 — 2020</text>
+      
+      <rect x="1180" y="0" width="220" height="65" rx="10" fill="#1abc9c" fill-opacity="0.3" stroke="#16a085" stroke-width="1"/>
+      <text x="1290" y="25" text-anchor="middle" fill="#1abc9c" font-size="12" font-weight="bold">🚀 VR / CLOUD / AI</text>
+      <text x="1290" y="45" text-anchor="middle" fill="#1abc9c" font-size="11">2016 — настоящее время</text>
+    </g>
+  </g>
+  
+  <!-- Статистика -->
+  <g transform="translate(80, 780)" font-family="Arial, sans-serif">
+    <rect x="0" y="0" width="1620" height="55" rx="10" fill="#1e1e3f" stroke="#333366" stroke-width="1"/>
+    <text x="810" y="20" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">📊 ИНДУСТРИЯ В ЦИФРАХ (2024)</text>
+    
+    <text x="180" y="42" text-anchor="middle" fill="#00d2d3" font-size="12">💰 $200+ млрд рынок</text>
+    <text x="480" y="42" text-anchor="middle" fill="#ff9f43" font-size="12">👥 3.3 млрд игроков</text>
+    <text x="780" y="42" text-anchor="middle" fill="#a29bfe" font-size="12">📱 50% мобильный сегмент</text>
+    <text x="1100" y="42" text-anchor="middle" fill="#55efc4" font-size="12">🎮 9 поколений консолей</text>
+    <text x="1420" y="42" text-anchor="middle" fill="#fd79a8" font-size="12">⚙️ 20+ игровых движков</text>
+  </g>
+  
+  <!-- Подпись -->
+  <text x="900" y="868" text-anchor="middle" fill="#636e72" font-family="Arial, sans-serif" font-size="11">
+    История компьютерных игр: 1972 — 2024 | Платформы • Движки • Знаковые игры
+  </text>
+</svg>
